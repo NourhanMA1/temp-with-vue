@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='/assets/images/favicon.ico' type='image/x-icon' />
+    <link rel="stylesheet" href="/assets/style/digital-screen.css">
+    <script src="/assets/js/lottie-min.js"></script>
+    <script src="/assets/js/vue.js"></script>
+
+    <title>Digital Screen</title>
+</head>
+
+<body>
+    <div class="main" id="digital-screen">
+        <div v-show="!startLo">
+            <div class="start-button" @click="start()"></div>
+        </div>
+
+        <div class="zoki" v-show="startLo">
+            <div class="music" @click="muteMusic()" :class="bgMusic ? 'play' : 'mute'"></div>
+
+            <div class="zoki-charecter" id="zokicharecter" v-show="!question">
+            </div>
+
+            <div class="screen-question">
+
+                <div class="screen">
+                    <div class="check-button" @click="checkanswer()">
+                        <div class="check hand"></div>
+                    </div>
+                    <div class="display-answer-button " @click="displayAnswer()">
+                        <div class="display-answer hand"></div>
+                    </div>
+                    <div class="next-button hide" @click="next()">
+                        <div class="next hand "> </div>
+                    </div>
+
+                    <div class="finished" v-show="!question && feedback">
+                        <div id="robots">
+                        </div>
+                    </div>
+
+
+                    <template>
+                        <div class="question" v-for="(e, i) in this.posts[0].items" :class="{'active' : e.active}">
+                            <div class="content" v-if="!feedback">
+
+                                <template v-if="e.type == 1">
+                                    <input class="wrong normal" type="text" index="1" @keyup="maxLength($event, e)"
+                                        inputType="1" @change="checkvalue($event,e)" @click="foucs($event)"
+                                        attr.maxlength="1" @focus="focusin($event)" @focusout="focusout()">
+                                    <div class="help hand display" v-if="helpHand"></div>
+
+                                    <input class="wrong normal" type="text" index="2" @keyup="maxLength($event,e)"
+                                        @change="checkvalue($event,e)" inputType="1" @click="foucs($event)"
+                                        v-if="e.content.length >= 2" attr.maxlength="1" @focus="focusin($event)"
+                                        @focusout="focusout()">
+                                    <p v-for="p in e.parag1">{{p}}</p>
+                                    <input class="wrong normal" type="text" index="3" @keyup="maxLength($event,e)"
+                                        @change="checkvalue($event,e)" inputType="1" @click="foucs($event)"
+                                        v-if="e.content.length >= 3" attr.maxlength="1" @focus="focusin($event)"
+                                        @focusout="focusout()">
+                                    <input class="wrong normal" type="text" index="4" @keyup="maxLength($event,e)"
+                                        @change="checkvalue($event,e)" inputType="1" @click="foucs($event)"
+                                        v-if="e.content.length >= 4" attr.maxlength="1" @focus="focusin($event)"
+                                        @focusout="focusout()">
+
+                                </template>
+                                <div class="break"></div>
+
+                                <template v-if="e.type == 2">
+                                    <p v-for="p in e.parag">{{p}}</p>
+                                    <div class="break"></div>
+                                    <template v-for=" (item, idx) in e.content[0].input.nums">
+                                        <input class="wrong normal" type="text" index="1" attr.maxlength="1"
+                                            @change="checkvalue($event,e)" @keyup="maxLength($event,e)" inputType="2"
+                                            @focusout="focusout()" @focus="focusin($event)" @click="foucs($event)">
+                                        <p v-if=" e.content[0].input.nums-1 > idx">،</p>
+                                    </template>
+
+                                    <div class="break"></div>
+                                    <p v-for="p in e.parag1">{{p}}</p>
+                                    <div class="break"></div>
+
+                                    <template v-for=" (item, idx) in e.content[1].input.nums">
+                                        <input class="wrong normal" type="text" index="2" attr.maxlength="1"
+                                            @change="checkvalue($event,e)" @keyup="maxLength($event,e)" inputType="2"
+                                            @focusout="focusout()" @focus="focusin($event)" @click="foucs($event)">
+                                        <p v-if=" e.content[1].input.nums-1> idx">،</p>
+                                    </template>
+
+                                    <div class="break"></div>
+                                    <p v-for="p in e.parag2">{{p}}</p>
+                                    <div class="break"></div>
+
+                                    <template v-for=" (item, idx) in e.content[2].input.nums">
+                                        <input class="wrong normal" type="text" index="3" attr.maxlength="1"
+                                            @change="checkvalue($event,e)" @keyup="maxLength($event,e)" inputType="2"
+                                            @focusout="focusout()" @focus="focusin($event)" @click="foucs($event)">
+                                        <p v-if="  e.content[2].input.nums-1 > idx">،</p>
+                                    </template>
+
+                                    <p v-for="p in e.parag3" v-if="">{{p}}</p>
+                                    <div class="break"></div>
+                                    <template v-if="e.content.length === 4">
+                                        <template v-for=" (item, idx) in e.content[3].input.nums">
+                                            <input class="wrong normal" type="text" index="4" attr.maxlength="1"
+                                                @change="checkvalue($event,e)" @keyup="maxLength($event,e)"
+                                                inputType="2" @focusout="focusout()" @focus="focusin($event)"
+                                                @click="foucs($event)">
+                                            <p v-if="  e.content[3].input.nums-1 > idx">،</p>
+                                        </template>
+                                    </template>
+                                </template>
+
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <div v-show="question">
+                <div class="nextContent">
+                    <div class="character show">
+                        <!-- <p class="percentage">{{finalProgress}}%</p> -->
+                        <!--
+                <div class="progress" v-if="counter === loQuestions-1 ">
+                  <ng-lottie [options]="progressbar" (animationCreated)="onAnimated($event);calculate()">
+                  </ng-lottie>
+                </div>
+                <p class="grade" >{{finalResult}}</p> -->
+                        <div class="animation">
+                            <div id="zokihappy" v-show="zokiStatus"></div>
+                            <div id="zokisad" v-show="!zokiStatus"></div>
+                        </div>
+
+                        <div class="buttons">
+                            <button class="home" @click="home()"></button>
+                            <button class="next" @click="nextQuestion()" v-if="counter !== loQuestions-1"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="assets/js/zoki.js"></script>
+    <script src="./assets/js/animation.js"></script>
+</body>
+
+</html>
