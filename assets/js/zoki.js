@@ -24,25 +24,14 @@ new Vue({
             content: [
               {
                 input: {
-                  nums: 5,
+                  nums: 2,
                   valid: ["0", "5", "10", "15", "20"],
                 },
               },
               {
                 input: {
-                  nums: 10,
-                  valid: [
-                    "0",
-                    "2",
-                    "4",
-                    "6",
-                    "8",
-                    "10",
-                    "12",
-                    "14",
-                    "16",
-                    "18",
-                  ],
+                  nums: 2,
+                  valid: ["0", "2"],
                 },
               },
               {
@@ -54,300 +43,54 @@ new Vue({
             ],
           },
           {
-            type: 2,
+            type: 1,
             correctCounter: 0,
             numberOfquestions: 0,
-            active: false,
+            active: true,
             id: 1,
-            parag: [" اُذكرْ أول 7 مضاعفات للعدد 6 "],
-            parag1: ["اُذكرْ أول 5 مضاعفات للعدد 8"],
+            parag: [" اُذكرْ أول 5 مضاعفات للعدد 5 "],
+            parag1: ["اُذكرْ أول 10 مضاعفات للعدد 2"],
             parag2: ["ما المضاعفات المشتركة للعددين؟ "],
             content: [
               {
                 input: {
-                  nums: 7,
-                  valid: ["0", "6", "12", "18", "24", "30", "36"],
-                },
-              },
-              {
-                input: {
-                  nums: 5,
-                  valid: ["0", "8", "16", "24", "32"],
+                  nums: 2,
+                  valid: ["0", "5", "10", "15", "20"],
                 },
               },
               {
                 input: {
                   nums: 2,
-                  valid: ["0", "24"],
-                },
-              },
-            ],
-          },
-          {
-            type: 2,
-            correctCounter: 0,
-            numberOfquestions: 0,
-            active: false,
-            id: 3,
-            parag: ["  اُذكرْ أول 10 مضاعفات للعدد 3 "],
-            parag1: ["اُذكرْ أول 4 مضاعفات للعدد 9"],
-            parag2: ["ما المضاعفات المشتركة للعددين؟ "],
-            content: [
-              {
-                input: {
-                  nums: 10,
-                  valid: [
-                    "0",
-                    "3",
-                    "6",
-                    "9",
-                    "12",
-                    "15",
-                    "18",
-                    "21",
-                    "24",
-                    "27",
-                  ],
-                },
-              },
-              {
-                input: {
-                  nums: 4,
-                  valid: ["0", "9", "18", "27"],
-                },
-              },
-              {
-                input: {
-                  nums: 4,
-                  valid: ["0", "9", "18", "27"],
-                },
-              },
-            ],
-          },
-          {
-            type: 2,
-            correctCounter: 0,
-            numberOfquestions: 0,
-            active: false,
-            id: 4,
-            parag: ["  اُذكرْ أول 8 مضاعفات للعدد 2 "],
-            parag1: ["اُذكرْ أول 4 مضاعفات للعدد 7"],
-            parag2: ["ما المضاعفات المشتركة للعددين؟ "],
-            content: [
-              {
-                input: {
-                  nums: 8,
-                  valid: ["0", "2", "4", "6", "8", "10", "12", "14"],
-                },
-              },
-              {
-                input: {
-                  nums: 4,
-                  valid: ["0", "7", "14", "21"],
+                  valid: ["0", "2"],
                 },
               },
               {
                 input: {
                   nums: 2,
-                  valid: ["0", "14"],
+                  valid: ["0", "10"],
                 },
               },
             ],
           },
           {
-            type: 2,
+            type: 1,
             correctCounter: 0,
             numberOfquestions: 0,
-            active: false,
-            id: 5,
-            parag: ["  اُذكرْ أول 7 مضاعفات للعدد 6 "],
-            parag1: ["اُذكرْ أول 7 مضاعفات للعدد 4"],
-            parag2: ["ما المضاعفات المشتركة للعددين؟ "],
+            active: true,
+            id: 1,
+            parag: [" اُذكرْ أول 5 مضاعفات للعدد 5 "],
+            parag1: ["اُذكرْ أول 10 مضاعفات للعدد 2"],
             content: [
               {
                 input: {
-                  nums: 7,
-                  valid: ["0", "6", "12", "18", "24", "30", "36"],
-                },
-              },
-              {
-                input: {
-                  nums: 7,
-                  valid: ["0", "4", "8", "12", "16", "20", "24"],
+                  nums: 2,
+                  valid: ["0", "5", "10", "15", "20"],
                 },
               },
               {
                 input: {
                   nums: 2,
-                  valid: ["0", "12", "24"],
-                },
-              },
-            ],
-          },
-          {
-            type: 2,
-            correctCounter: 0,
-            numberOfquestions: 0,
-            active: false,
-            id: 6,
-            parag: [" اُذكرْ مضاعفات العدد 2 الأقل من 20"],
-            parag1: ["اُذكرْ مضاعفات العدد 4 الأقل من 20"],
-            parag2: ["ما المضاعفات المشتركة للعددين؟ "],
-            content: [
-              {
-                input: {
-                  nums: 10,
-                  valid: [
-                    "0",
-                    "2",
-                    "4",
-                    "6",
-                    "8",
-                    "10",
-                    "12",
-                    "14",
-                    "16",
-                    "18",
-                  ],
-                },
-              },
-              {
-                input: {
-                  nums: 5,
-                  valid: ["0", "4", "8", "12", "16"],
-                },
-              },
-              {
-                input: {
-                  nums: 5,
-                  valid: ["0", "4", "8", "12", "16"],
-                },
-              },
-            ],
-          },
-          {
-            type: 2,
-            correctCounter: 0,
-            numberOfquestions: 0,
-            active: false,
-            id: 7,
-            parag: ["اُذكرْ مضاعفات العدد 2 المحصورة بين 20 ،  31"],
-            parag1: ["اُذكرْ مضاعفات العدد 3 المحصورة بين 20 ،  31"],
-            parag2: ["ما المضاعفات المشتركة للعددين؟ "],
-            content: [
-              {
-                input: {
-                  nums: 6,
-                  valid: ["20", "22", "24", "26", "28", "30"],
-                },
-              },
-              {
-                input: {
-                  nums: 4,
-                  valid: ["21", "24", "27", "30"],
-                },
-              },
-              {
-                input: {
-                  nums: 2,
-                  valid: ["24", "30"],
-                },
-              },
-            ],
-          },
-          {
-            type: 2,
-            correctCounter: 0,
-            numberOfquestions: 0,
-            active: false,
-            id: 8,
-            parag: ["اُذكرْ مضاعفات العدد 3 المحصورة بين 14 ،  32"],
-            parag1: ["اُذكرْ مضاعفات العدد 5 الأقل من 32"],
-            parag2: ["ما المضاعفات المشتركة للعددين؟ "],
-            content: [
-              {
-                input: {
-                  nums: 6,
-                  valid: ["15", "18", "21", "24", "27", "30"],
-                },
-              },
-              {
-                input: {
-                  nums: 7,
-                  valid: ["0", "5", "10", "15", "20", "25", "30"],
-                },
-              },
-              {
-                input: {
-                  nums: 2,
-                  valid: ["15", "30"],
-                },
-              },
-            ],
-          },
-          {
-            type: 2,
-            correctCounter: 0,
-            numberOfquestions: 0,
-            active: false,
-            id: 9,
-            parag: ["اُذكرْ مضاعفات العدد 3 المحصورة بين 20 ،  40"],
-            parag1: ["اُذكرْ مضاعفات العدد 4 المحصورة بين 19 ،  40"],
-            parag2: ["ما المضاعفات المشتركة للعددين؟ "],
-            content: [
-              {
-                input: {
-                  nums: 7,
-                  valid: ["21", "24", "27", "30", "33", "36", "39"],
-                },
-              },
-              {
-                input: {
-                  nums: 5,
-                  valid: ["20", "24", "28", "32", "36"],
-                },
-              },
-              {
-                input: {
-                  nums: 2,
-                  valid: ["36", "24"],
-                },
-              },
-            ],
-          },
-          {
-            type: 2,
-            correctCounter: 0,
-            numberOfquestions: 0,
-            active: false,
-            id: 10,
-            parag: ["اُذكرْ أول 5 مضاعفات للعدد 8 "],
-            parag1: ["اُذكرْ أول 7 مضاعفات للعدد 4 "],
-            parag2: ["اُذكرْ أول 5 مضاعفات للعدد 6"],
-            parag3: ["ما المضاعفات المشتركة للأعداد الثلاثة؟ "],
-            content: [
-              {
-                input: {
-                  nums: 5,
-                  valid: ["0", "8", "16", "24", "32"],
-                },
-              },
-              {
-                input: {
-                  nums: 7,
-                  valid: ["0", "4", "8", "12", "16", "20", "24"],
-                },
-              },
-              {
-                input: {
-                  nums: 5,
-                  valid: ["0", "6", "12", "18", "24"],
-                },
-              },
-              {
-                input: {
-                  nums: 2,
-                  valid: ["0", "24"],
+                  valid: ["0", "2"],
                 },
               },
             ],
@@ -355,7 +98,7 @@ new Vue({
         ],
       },
     ],
-    loQuestions: 6,
+    loQuestions: 3,
     question: false,
     counter: -1,
     bgMusic: false,
@@ -385,10 +128,13 @@ new Vue({
     shuffled: [],
     setTimeOut: null,
     zokiStatus: false,
-    progressBarAnimation: null,
     answer: [],
     showAnswers: [],
     test: 0,
+    result: 0,
+    finalProgress: 0,
+    finalResult: "",
+    zokifeedback: false,
   },
 
   create() {
@@ -403,6 +149,7 @@ new Vue({
     this.robotsSound.src = "/assets/audio/comedy.mp3";
     this.clickBtn.src = "/assets/audio/click_btn.mp3";
     this.zokiBoring.src = "/assets/audio/Knock knock.mp3";
+    finalResponse.submitData(JSON.stringify(this.posts[0]), 1);
   },
 
   methods: {
@@ -426,10 +173,22 @@ new Vue({
                 this.showAnswers.push(e.slice());
               });
             });
-            // console.log(this.showAnswers);
           }
         }
       });
+
+      let count = 0;
+      document.querySelectorAll(".active input").forEach((el) => {
+        el.value == "" ? count++ : "";
+      });
+      if (count == 0) {
+        document.querySelector(".check.hand")?.classList.add("display");
+      } else {
+        document.querySelector(".check.hand")?.classList.remove("display");
+        document
+          .querySelector(".display-answer.hand")
+          ?.classList.remove("display");
+      }
 
       this.index = event.target.getAttribute("index");
       let maxLength = 0;
@@ -444,8 +203,9 @@ new Vue({
       this.zokiStatus = true;
       this.rightAnswer.play();
       zokicharecter.playSegments([50, 90], true);
+      document.querySelector(".check.hand")?.classList.remove("display");
+      document.querySelector(".check.hand")?.classList.add("hide");
       document.querySelector(".check-button")?.classList.add("disable");
-      event.target.setAttribute("disabled", "");
       document
         .querySelector(".display-answer-button")
         ?.classList.add("disable");
@@ -471,6 +231,8 @@ new Vue({
             event.target.classList.add("right");
             event.target.classList.remove("wrong");
             event.target.classList.remove("false");
+            event.target.setAttribute("disabled", "");
+            element.correctCounter += 1;
             this.test += 1;
             break;
           } else {
@@ -491,6 +253,8 @@ new Vue({
             event.target.classList.remove("wrong");
             event.target.classList.remove("false");
             this.test += 1;
+            event.target.setAttribute("disabled", "");
+            element.correctCounter += 1;
             // console.log(this.test);
             break;
           } else {
@@ -498,12 +262,13 @@ new Vue({
             event.target.classList.add("wrong");
             event.target.classList.add("false");
           }
-          // }
         }
       }
 
       if (this.test === element.numberOfquestions) {
         this.isAllQuestionsRight();
+        this.calculate();
+        this.finished();
       }
     },
 
@@ -522,7 +287,7 @@ new Vue({
 
     // Get number of questions
     numOfQuestions() {
-      this.posts[0].numberOfquestion = this.posts[0].items.length;
+      this.posts[0].numberOfquestion = this.loQuestions;
       this.posts[0].items.forEach((el) => {
         if (el.type == 1) {
           el.numberOfquestions = el.content.length;
@@ -546,9 +311,11 @@ new Vue({
     },
 
     checkanswer() {
-      this.reset();
-      document.querySelector(".check.hand")?.classList.remove("display");
       document.querySelector(".check.hand")?.classList.add("hide");
+      document.querySelector(".display-answer.hand")?.classList.add("display");
+
+      this.reset();
+
       this.clickBtn.play();
       this.count = 0;
       this.rightBox = document.querySelectorAll(".active .right");
@@ -568,7 +335,13 @@ new Vue({
         if (el.active) {
           this.content = el.content;
           el.correctCounter = this.rightBox.length;
-          this.isTheQuestionRight();
+          if (this.falseBox.length === 0) {
+            this.isAllQuestionsRight();
+          } else {
+            this.wrongAnswer.play();
+            zokicharecter.playSegments([98, 140], true);
+          }
+          // this.isTheQuestionRight();
           this.questionSound(this.zokiStatus);
         }
       });
@@ -580,15 +353,6 @@ new Vue({
       this.screenClick = 0;
       this.zokiBoring.pause();
       clearTimeout(this.setTimeOut);
-    },
-
-    isTheQuestionRight() {
-      if (this.falseBox.length === 0) {
-        this.isAllQuestionsRight();
-      } else {
-        this.wrongAnswer.play();
-        zokicharecter.playSegments([98, 140], true);
-      }
     },
 
     displayAnswer() {
@@ -604,7 +368,10 @@ new Vue({
           }
         }
       });
-
+      document
+        .querySelector(".display-answer.hand")
+        ?.classList.remove("display");
+      document.querySelector(".help.hand")?.classList.remove("display");
       document.querySelector(".next.hand")?.classList.add("display");
       this.robots = document.getElementById("robots");
       zokicharecter.playSegments([98, 140], true);
@@ -633,7 +400,9 @@ new Vue({
     },
 
     next() {
+      this.calculate();
       this.clickBtn.play();
+      this.finished();
       this.question = true;
       document.querySelector(".next.hand")?.classList.remove("display");
       document.querySelector(".next-button")?.classList.add("hide");
@@ -664,7 +433,7 @@ new Vue({
       this.showAnswers = [];
       this.zokiStatus = false;
       this.border = document.getElementsByClassName("screen-question");
-      document.querySelector(".check.hand")?.classList.remove("hide");
+      // document.querySelector(".check.hand")?.classList.remove("hide");
       this.counter += 1;
       this.feedback = this.question = false;
       this.questionsNumber = this.posts[0].items.length;
@@ -737,6 +506,53 @@ new Vue({
     focusout() {
       document.querySelector(".zoki-charecter")?.classList.remove("hide");
       this.border[0].style.cssText = "padding-bottom: 0vw ;";
+    },
+
+    calculate() {
+      this.posts[0].items.filter((el) => {
+        if (el.active) {
+          console.log("right" + el.correctCounter);
+          if (this.test == el.numberOfquestions) {
+            this.result += 1;
+            console.log("re" + this.result);
+          }
+        }
+      });
+
+      // console.log(progressbar);
+      this.finalProgress = (this.result / this.loQuestions) * 100;
+      console.log(this.finalProgress);
+      if (this.finalProgress == 0) {
+        progressbar.playSegments([0, 1], true);
+        this.finalResult = "ضعيف";
+        console.log("ضعيف");
+        this.zokifeedback = true;
+      } else if (this.finalProgress <= 50) {
+        progressbar.playSegments([1, 50], true);
+        this.finalResult = "ضعيف";
+        console.log("ضعيف");
+        this.zokifeedback = true;
+      } else if (this.finalProgress >= 51 && this.finalProgress < 65) {
+        progressbar.playSegments([50, 65], true);
+        console.log("مقبول");
+        this.finalResult = "مقبول";
+        this.zokifeedback = true;
+      } else if (this.finalProgress > 65 && this.finalProgress < 85) {
+        progressbar.playSegments([65, 85], true);
+        console.log("جيد ");
+        this.finalResult = "جيد";
+        this.zokifeedback = false;
+      } else if (this.finalProgress > 84 && this.finalProgress <= 100) {
+        progressbar.playSegments([85, 100], true);
+        console.log("يفوق التوقعات ");
+        this.finalResult = "يفوق التوقعات ";
+        this.zokifeedback = false;
+      }
+    },
+    finished() {
+      this.posts[0].counterCorrect === this.posts[0].numberOfquestion
+        ? finalResponse.submitData(JSON.stringify(this.posts[0]), 4)
+        : finalResponse.submitData(JSON.stringify(this.posts[0]), 1);
     },
   },
 });

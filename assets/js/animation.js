@@ -18,8 +18,6 @@ robots.goToAndStop(0, false);
 zokicharecter.goToAndStop(0, false);
 // zokicharecter.playSegments([0, 80], true);
 
-console.log(document.getElementById("robots"));
-
 let zokihappy = bodymovin.loadAnimation({
   container: document.getElementById("zokihappy"),
   path: "assets/animations/zoki/data.json",
@@ -37,3 +35,13 @@ let zokisad = bodymovin.loadAnimation({
   autoplay: true,
   initialSegment: [98, 140],
 });
+
+let progressbar = bodymovin.loadAnimation({
+  container: document.getElementById("progressbar"),
+  path: "assets/animations/progressbar/data.json",
+  renderer: "svg",
+  loop: false,
+  autoplay: false,
+});
+
+console.log(progressbar)
