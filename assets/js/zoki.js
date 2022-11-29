@@ -13,7 +13,7 @@ new Vue({
         numberOfquestion: 0,
         items: [
           {
-            type: 2,
+            type: 1,
             correctCounter: 0,
             numberOfquestions: 0,
             active: true,
@@ -72,6 +72,75 @@ new Vue({
               },
             ],
           },
+          {
+            type: 1,
+            correctCounter: 0,
+            numberOfquestions: 0,
+            active: true,
+            id: 1,
+            parag: [" اُذكرْ أول 5 مضاعفات للعدد 5 "],
+            parag1: ["اُذكرْ أول 10 مضاعفات للعدد 2"],
+            content: [
+              {
+                input: {
+                  nums: 2,
+                  valid: ["0", "5", "10", "15", "20"],
+                },
+              },
+              {
+                input: {
+                  nums: 2,
+                  valid: ["0", "2"],
+                },
+              },
+            ],
+          },
+          {
+            type: 1,
+            correctCounter: 0,
+            numberOfquestions: 0,
+            active: true,
+            id: 1,
+            parag: [" اُذكرْ أول 5 مضاعفات للعدد 5 "],
+            parag1: ["اُذكرْ أول 10 مضاعفات للعدد 2"],
+            content: [
+              {
+                input: {
+                  nums: 2,
+                  valid: ["0", "5", "10", "15", "20"],
+                },
+              },
+              {
+                input: {
+                  nums: 2,
+                  valid: ["0", "2"],
+                },
+              },
+            ],
+          },
+          {
+            type: 1,
+            correctCounter: 0,
+            numberOfquestions: 0,
+            active: true,
+            id: 1,
+            parag: [" اُذكرْ أول 5 مضاعفات للعدد 5 "],
+            parag1: ["اُذكرْ أول 10 مضاعفات للعدد 2"],
+            content: [
+              {
+                input: {
+                  nums: 2,
+                  valid: ["0", "5", "10", "15", "20"],
+                },
+              },
+              {
+                input: {
+                  nums: 2,
+                  valid: ["0", "2"],
+                },
+              },
+            ],
+          }, 
           {
             type: 1,
             correctCounter: 0,
@@ -204,6 +273,7 @@ new Vue({
       this.rightAnswer.play();
       zokicharecter.playSegments([50, 90], true);
       document.querySelector(".check.hand")?.classList.remove("display");
+      document.querySelector(".display-answer.hand")?.classList.remove("display");
       document.querySelector(".check.hand")?.classList.add("hide");
       document.querySelector(".check-button")?.classList.add("disable");
       document
@@ -220,6 +290,7 @@ new Vue({
         this.reset();
         zokicharecter.playSegments([0, 40], true);
         this.question = true;
+        this.calculate();
       }, 5500);
     },
 
@@ -267,7 +338,7 @@ new Vue({
 
       if (this.test === element.numberOfquestions) {
         this.isAllQuestionsRight();
-        this.calculate();
+        // this.calculate();
         this.finished();
       }
     },
@@ -538,17 +609,18 @@ new Vue({
         this.finalResult = "مقبول";
         this.zokifeedback = true;
       } else if (this.finalProgress > 65 && this.finalProgress < 85) {
-        progressbar.playSegments([65, 85], true);
+        progressbar.playSegments([65, 88], true);
         console.log("جيد ");
         this.finalResult = "جيد";
         this.zokifeedback = false;
       } else if (this.finalProgress > 84 && this.finalProgress <= 100) {
-        progressbar.playSegments([85, 100], true);
+        progressbar.playSegments([88, 100], true);
         console.log("يفوق التوقعات ");
         this.finalResult = "يفوق التوقعات ";
         this.zokifeedback = false;
       }
     },
+
     finished() {
       this.posts[0].counterCorrect === this.posts[0].numberOfquestion
         ? finalResponse.submitData(JSON.stringify(this.posts[0]), 4)
