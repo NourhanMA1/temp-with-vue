@@ -95,75 +95,6 @@ new Vue({
               },
             ],
           },
-          {
-            type: 1,
-            correctCounter: 0,
-            numberOfquestions: 0,
-            active: true,
-            id: 1,
-            parag: [" اُذكرْ أول 5 مضاعفات للعدد 5 "],
-            parag1: ["اُذكرْ أول 10 مضاعفات للعدد 2"],
-            content: [
-              {
-                input: {
-                  nums: 2,
-                  valid: ["0", "5", "10", "15", "20"],
-                },
-              },
-              {
-                input: {
-                  nums: 2,
-                  valid: ["0", "2"],
-                },
-              },
-            ],
-          },
-          {
-            type: 1,
-            correctCounter: 0,
-            numberOfquestions: 0,
-            active: true,
-            id: 1,
-            parag: [" اُذكرْ أول 5 مضاعفات للعدد 5 "],
-            parag1: ["اُذكرْ أول 10 مضاعفات للعدد 2"],
-            content: [
-              {
-                input: {
-                  nums: 2,
-                  valid: ["0", "5", "10", "15", "20"],
-                },
-              },
-              {
-                input: {
-                  nums: 2,
-                  valid: ["0", "2"],
-                },
-              },
-            ],
-          }, 
-          {
-            type: 1,
-            correctCounter: 0,
-            numberOfquestions: 0,
-            active: true,
-            id: 1,
-            parag: [" اُذكرْ أول 5 مضاعفات للعدد 5 "],
-            parag1: ["اُذكرْ أول 10 مضاعفات للعدد 2"],
-            content: [
-              {
-                input: {
-                  nums: 2,
-                  valid: ["0", "5", "10", "15", "20"],
-                },
-              },
-              {
-                input: {
-                  nums: 2,
-                  valid: ["0", "2"],
-                },
-              },
-            ],
-          },
         ],
       },
     ],
@@ -204,6 +135,7 @@ new Vue({
     finalProgress: 0,
     finalResult: "",
     zokifeedback: false,
+    inactiveInputs: null,
   },
 
   create() {
@@ -273,7 +205,9 @@ new Vue({
       this.rightAnswer.play();
       zokicharecter.playSegments([50, 90], true);
       document.querySelector(".check.hand")?.classList.remove("display");
-      document.querySelector(".display-answer.hand")?.classList.remove("display");
+      document
+        .querySelector(".display-answer.hand")
+        ?.classList.remove("display");
       document.querySelector(".check.hand")?.classList.add("hide");
       document.querySelector(".check-button")?.classList.add("disable");
       document
@@ -296,6 +230,8 @@ new Vue({
 
     checkvalue(event, element) {
       // Loop over the valid answers array to check if it's right ...
+      this.inactiveInputs = document.querySelectorAll(".active .inactive");
+      console.log(this.inactiveInputs.length);
       if (element.type == 1) {
         for (const el of element.content[this.index - 1].input.valid) {
           if (el === event.target.value.trim()) {
@@ -336,9 +272,17 @@ new Vue({
         }
       }
 
+      if (
+        this.test ===
+        element.numberOfquestions - this.inactiveInputs.length
+      ) {
+        this.inactiveInputs.forEach((el) => {
+          el.classList.remove("inactive");
+        });
+      }
+
       if (this.test === element.numberOfquestions) {
         this.isAllQuestionsRight();
-        // this.calculate();
         this.finished();
       }
     },
@@ -395,20 +339,24 @@ new Vue({
         elem.classList.add("true");
         this.count += 1;
       });
-      // console.log("right " + this.rightBox.length);
+
       this.falseBox = document.querySelectorAll(".active .wrong");
       this.falseBox.forEach((elem) => {
         elem.classList.remove("true");
         elem.classList.add("false");
       });
-      // console.log("false " + this.falseBox.length);
+
       this.posts[0].items.filter((el) => {
         if (el.active) {
           this.content = el.content;
           el.correctCounter = this.rightBox.length;
-          if (this.falseBox.length === 0) {
+          if (this.falseBox.length === 0 && this.inactiveInputs.length == 0) {
             this.isAllQuestionsRight();
-          } else {
+          }else if(this.falseBox.length === 0){
+            // console.log('happy')
+            zokicharecter.playSegments([50, 90], true);
+          }
+           else {
             this.wrongAnswer.play();
             zokicharecter.playSegments([98, 140], true);
           }
@@ -455,6 +403,11 @@ new Vue({
       this.zokiStatus = false;
       this.reset();
       this.questionSound(this.zokiStatus);
+      // inactivee
+      document.querySelectorAll(".active .inactive").forEach((el) => {
+        el.classList.remove("inactive");
+      });
+      // ----------------------------------
       document.querySelectorAll(".active .normal").forEach((elem, i) => {
         let index = elem.getAttribute("index") - 1;
         let type = elem.getAttribute("inputType");
@@ -464,7 +417,8 @@ new Vue({
           elem.value = this.showAnswers[i];
         }
         elem.classList.remove("false");
-        elem.style.pointerEvents = "none";
+        elem.setAttribute("disabled", "");
+        // elem.style.pointerEvents = "none";
         elem.style.backgroundImage = "url(assets/images/display-input.png)";
         elem.style.color = "#fff";
       });

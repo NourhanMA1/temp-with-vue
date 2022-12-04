@@ -365,7 +365,7 @@ body .main .zoki input.false {
 }
 body .main .zoki input.inactive {
   pointer-events: none;
-  background-image: url("/assets/images/display-input.png");
+  background-image: url("/assets/images/inactive-input.png") !important;
 }
 body .main .nextContent {
   width: 100%;

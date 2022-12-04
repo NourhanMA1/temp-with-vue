@@ -50,7 +50,7 @@
                             <div class="content" v-if="!feedback">
 
                                 <template v-if="e.type == 1">
-                                    <input class="wrong normal" type="text" index="1" @keyup="maxLength($event, e)"
+                                    <input class=" normal inactive" type="text" index="1" @keyup="maxLength($event, e)"
                                         inputType="1" @change="checkvalue($event,e)" @click="foucs($event)"
                                         maxlength="1" @focus="focusin($event)" @focusout="focusout()">
                                     <div class="help hand display" v-if="helpHand && i == 0"></div>
@@ -64,7 +64,7 @@
                                         @change="checkvalue($event,e)" inputType="1" @click="foucs($event)"
                                         v-if="e.content.length >= 3" maxlength="1" @focus="focusin($event)"
                                         @focusout="focusout()">
-                                    <input class="wrong normal" type="text" index="4" @keyup="maxLength($event,e)"
+                                    <input class="wrong normal " type="text" index="4" @keyup="maxLength($event,e)"
                                         @change="checkvalue($event,e)" inputType="1" @click="foucs($event)"
                                         v-if="e.content.length >= 4" maxlength="1" @focus="focusin($event)"
                                         @focusout="focusout()">
@@ -76,7 +76,7 @@
                                     <p v-for="p in e.parag">{{p}}</p>
                                     <div class="break"></div>
                                     <template v-for=" (item, idx) in e.content[0].input.nums">
-                                        <input class="wrong normal" type="text" index="1" maxlength="1"
+                                        <input class=" normal inactive" type="text" index="1" maxlength="1"
                                             @change="checkvalue($event,e)" @keyup="maxLength($event,e)" inputType="2"
                                             @focusout="focusout()" @focus="focusin($event)" @click="foucs($event)">
                                         <p v-if=" e.content[0].input.nums-1 > idx">،</p>
@@ -109,7 +109,7 @@
                                     <div class="break"></div>
                                     <template v-if="e.content.length === 4">
                                         <template v-for=" (item, idx) in e.content[3].input.nums">
-                                            <input class="wrong normal" type="text" index="4" maxlength="1"
+                                            <input class="wrong normal " type="text" index="4" maxlength="1"
                                                 @change="checkvalue($event,e)" @keyup="maxLength($event,e)"
                                                 inputType="2" @focusout="focusout()" @focus="focusin($event)"
                                                 @click="foucs($event)">
